@@ -56,7 +56,7 @@
     </div>
     <div class="chat">
       <div class="btn-login-twitch">
-        <a href="" class="d-flex block-login">
+        <a href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=qml5b1xcchymsysftuik4mm9tzj0yj&redirect_uri=http://v2.zelenjoy.fr/auth/twitch&scope=user_read+user_follows_edit" class="d-flex block-login">
           <div class="">
             <span class="text-1">Connexion</span><br>
             <span class="subtext-1">avec twitch</span>

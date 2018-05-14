@@ -14,16 +14,20 @@ $(document).ready(function(){
   $("#night-btn").click(function(){
     if (night == "true") {
       night = "false";
-      $(".toggler").removeClass("night-mode");
       localStorage.setItem("night_mode", "false");
+
+      document.getElementById("chat_embed").src = "https://www.twitch.tv/embed/zelenjoy/chat";
+      $(".toggler").removeClass("night-mode");
 
       $("#night-btn-toggle").addClass("fa-toggle-off");
       $("#night-btn-toggle").removeClass("fa-toggle-on");
     }
     else {
       night = "true";
-      $(".toggler").addClass("night-mode");
       localStorage.setItem("night_mode", "true");
+
+      document.getElementById("chat_embed").src = "https://www.twitch.tv/embed/zelenjoy/chat?darkpopout";
+      $(".toggler").addClass("night-mode");
 
       $("#night-btn-toggle").addClass("fa-toggle-on");
       $("#night-btn-toggle").removeClass("fa-toggle-off");
