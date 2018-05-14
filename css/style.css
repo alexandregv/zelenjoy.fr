@@ -48,14 +48,41 @@ body {
     width: 17%;
     right: 0;
 }
-.chat a {
+.chat .btn-login-twitch {
     top: 0;
     width: 100%;
-    background-color: #F00;
+    background-color: rgba(155, 55, 183, 1);
     z-index: 1;
     height: 75px;
-    border-bottom: 2px solid #0F0;
+}
+.icon-login {
+    width: 25%;
+    height: 75px;
+    background-color: rgba(155, 55, 183, 1);
+    padding-top: 13px;
+    padding-left: 20px;
+}
+.block-login a{
+    color: #FFF;
+}
+.block-login:hover a, .block-login:visited a, .block-login:active a, .block-login:link a{
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
 
+.text-login {
+    width: 75%;
+    height: 75px;
+    background-color: rgba(188, 66, 222, 1);
+    padding-top: 13px;
+    padding-left: 40px;
+}
+.text-login .text-1 {
+    font-size: 1.6rem;
+    margin-bottom: -10px;
+}
+.text-login .subtext-1 {
+    font-size: 0.9rem;
 }
 .chat iframe {
     position: fixed;
@@ -114,7 +141,7 @@ body {
 
 .nav-item-toggler-night-mode {
     border: 2px solid rgba(188, 66, 222, 1);
-    border-radius: 0.3rem;
+    border-radius: 0.2rem;
 }
 .nav-item-toggler-night-mode .nav-link{
     padding: 2px 1px;
@@ -156,15 +183,6 @@ body {
 .nav-link-icons {
     padding: 0;
     margin: 0;
-}
-.btn-login-twitch {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-.block-login {
-    width: 80%;
-    height: 90%;
 }
 /*==== STREAM ==== */
 .stream {
