@@ -18,14 +18,12 @@
             <div class="title"><?php if (isset($titleLive)) { if (strlen($titleLive) >= 65) { $titlecut = substr($titleLive, 0, 65) . '...'; echo $titlecut;} else {echo $titleLive;}}?></div>
             <div><span class="pseudo"><?php if (isset($pseudo)) {echo $pseudo;}?></span> <span class="game">joue à <?php if(isset($gameLive)) { echo $gameLive;}?></span></div>
           </div>
-          <div class="transition-block"></div>
-          <div class="top-stream-viewers-theater">
-            <div class="theater-block" id="toggle-class-theater-btn">
-              <span>mode theatre <i id="style-theater" class="fas fa-expand"></i></>
+          <div class="viewers ml-auto mr-3">
+            <div class="text-center count">
+              <?php echo "99999"; ?>
             </div>
-            <div class="transition-block-viewers"></div>
-            <div class="viewers-block">
-              <span id="viewers"><?php if (isset($viewers)){echo $viewers;} ?></span>
+            <div class="text-center subtitle">
+              viewers
             </div>
           </div>
         </div>
@@ -46,11 +44,11 @@
           </a>
           <a href="">
             <h4>Subscribe</h4>
-          </a>
-          <a href="">
+            </a>
+            <a href="">
             <h4>Donation</h4>
-          </a>
-        </div>
+            </a>
+          </div>
 
       </div>
     </div>

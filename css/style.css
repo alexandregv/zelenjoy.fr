@@ -184,79 +184,74 @@ body {
 .night-mode .title{
     color: rgba(255, 255, 255, 1);
 }
-.top-stream-viewers-theater {
-    height: 50px;
-    width: 320px;
-    font-size: 1.1rem;
-    /*background-color: rgba(235, 235, 235, 1);
-    border-top: 4px solid rgba(139, 139, 139, 1);*/
+.viewers .count {
+    color: rgba(188, 66, 222, 1);
+    font-size: 1.6rem;
 }
-.theater-block {
-    padding-top: 7px;
-    margin-top: auto;
-    padding-right: 35px;
-    margin-right: -15px;
-    height: 40px;
-    width: 170px;
-    background-color: rgba(235, 235, 235, 1);
-    border-top: 4px solid rgba(139, 139, 139, 1);
+.viewers .subtitle {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 0.9rem;
+    margin-top: -10px;
 }
-.night-mode .theater-block {
-    background-color: rgba(80, 80, 80, 1);
-    border-top: 4px solid rgba(188, 66, 222, 1);
-}
-.theater-block span:hover {
-    color: rgba(188, 66, 222, 0.8);
-}
-.night-mode .theater-block span:hover {
+.night-mode .viewers .subtitle {
     color: rgba(255, 255, 255, 0.6);
-}
-.night-mode .theater-block span {
-    color: rgba(255, 255, 255, 0.8);
-}
-.theater-block span i {
-    vertical-align: middle;
-}
-.transition-block {
-    height: 40px;
-    margin-left: auto;
-    margin-top: auto;
-    background-color: rgba(235, 235, 235, 1);
-    border-left: 4px solid rgba(139, 139, 139, 1);
-    width: 70px;
-    margin-right: -55px;
-    -webkit-transform: skewX(-35deg);
-    -moz-transform: skewX(-35deg);
-    -ms-transform: skewX(-35deg);
-    -o-transform: skewX(-35deg);
-    transform: skewX(-35deg);
-}
-.night-mode .transition-block {
-    background-color: rgba(80, 80, 80, 1);
-    border-left: 4px solid rgba(188, 66, 222, 1);
-}
-.viewers-block {
-    padding-top: 12px;
-    background-color: rgba(188, 66, 222, 1);
-    z-index: 0;
-    padding-right: 1rem;
-}
-.viewers-block span i {
-    vertical-align: middle;
-}
-.transition-block-viewers {
-    background-color: rgba(188, 66, 222, 1);
-    width: 70px;
-    margin-right: -40px;
-    border-left: 10px solid rgba(188, 66, 222, 1);
-    box-shadow: -4px 0px 0px rgba(144, 44, 202, 1);
-    -webkit-transform: skewX(-35deg);
-    -moz-transform: skewX(-35deg);
-    -ms-transform: skewX(-35deg);
-    -o-transform: skewX(-35deg);
-    transform: skewX(-35deg);
+    font-size: 0.9rem;
+    margin-top: -10px;
 }
 
+/*=============== FSD BUTTON ============== */
+/*.fsd-btns {
+    display: -ms-flex;
+    display: flex;
+}
+.fsd-btn {
+    position: relative;
+    height: 35px;
+    margin: 5px 10px 0 0;
+}
+.fsd-btn#follow {
+    width: 120px;
+}
+.fsd-btn#subs {
+    width: 125px;
+}
+.fsd-btn#donate {
+    width: 140px;
+}
+.text-block-fsd {
+    width: 80%;
+    height: 35px;
+    background-color: #eeeeee;
+    border-bottom-left-radius: 0.2rem;
+    border-top-left-radius: 0.2rem;
+    padding-top: 6px;
+    padding-left: 3px;
+    border-color: #DDD;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+}
+.icon-block-fsd {
+    width: 20%;
+    height: 35px;
+    background-color: #AAA;
+    padding-top: 9px;
+    padding-left: 4px;
+    border-bottom-right-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+    border-color: #DDD;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+}
+.fsd-btn a, .fsd-btn form {
+    color: #666;
+    text-decoration: none;
+}
+.fsd-btn a:hover, .fsd-btn form:hover {
+    color: rgba(188, 66, 222, 1);
+    text-decoration: none;
+}*/
 /*=============== MINI PLAYER ============== */
 .frame-stream-mini-player {
     position: fixed;
