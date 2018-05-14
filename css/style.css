@@ -20,12 +20,22 @@ body {
     padding: 0;
     font-family: "Baloo Bhaijaan", sans-serif;
 }
+
 .main {
     position: relative;
     display: flex;
     display: -ms-flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+}
+.allow-select {
+    -webkit-touch-callout: text; /* iOS Safari */
+    -webkit-user-select: text; /* Safari */
+     -khtml-user-select: text; /* Konqueror HTML */
+       -moz-user-select: text; /* Firefox */
+        -ms-user-select: text; /* Internet Explorer/Edge */
+            user-select: text; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 .night-mode {
     background-color: rgba(0, 0, 0, 0.95);
