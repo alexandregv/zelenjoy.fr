@@ -1,0 +1,253 @@
+:root {
+    --main-color-zelenjoy: rgba(188, 66, 222, 1);
+}
+@font-face {
+    font-family: fontFace;
+    src: url(/css/font-face/Vampire-Calligraphy.ttf);
+}
+html {
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Baloo Bhaijaan", sans-serif;
+}
+.main {
+    position: relative;
+    display: flex;
+    display: -ms-flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.night-mode {
+    background-color: rgba(0, 0, 0, 0.95);
+}
+.website {
+    width: 83%;
+}
+.chat {
+    width: 17%;
+}
+.block {
+    width: 100%;
+}
+/* ===== Navbar ===== */
+.navbar-bg .navbar-brand {
+    color: rgba(188, 66, 222, 1);
+}
+.navbar-bg {
+    background-color: rgba(0, 0, 0, 0.10);
+    border-bottom: 2px solid rgba(188, 66, 222, 1);
+}
+.night-mode .navbar-bg {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.8);
+}
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0rem 1rem 0.2rem 0.5rem;
+}
+.navbar-font-title {
+    font-size: 2rem;
+    font-family: fontFace, sans-serif;
+    transform: rotate(-8deg);
+
+}
+.fa-circle {
+    font-size: 12px;
+}
+.online-mode {
+    color: rgba(255, 0, 0, 0.8);
+}
+.nav-link {
+    color: rgba(0, 0, 0, 0.6);
+}
+.night-mode .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-item-toggler-night-mode {
+    border: 2px solid rgba(188, 66, 222, 1);
+    border-radius: 0.3rem;
+}
+.nav-item-toggler-night-mode .nav-link{
+    padding: 2px 1px;
+}
+.nav-item-toggler-night-mode .nav-link i{
+    color: rgba(188, 66, 222, 1);
+    vertical-align: middle;
+    font-size: 20px;
+}
+.nav-item #discord, .nav-item #twitter, .nav-item #twitch, .nav-item #instagram {
+    padding: 3px;
+    margin: 0 3px;
+    text-align: center;
+}
+#discord {
+    color: rgba(114, 137, 218, 0.7);
+}
+#discord:hover {
+    color: rgba(114, 137, 218, 1);
+}
+#twitter {
+    color: rgba(30, 161, 242, 0.7);
+}
+#twitter:hover {
+    color: rgba(30, 161, 242, 1);
+}
+#twitch {
+    color: rgba(100, 65, 164 , 0.7);
+}
+#twitch:hover {
+    color: rgba(100, 65, 164 , 1);
+}
+#instagram {
+    color: rgba(187, 0, 176, 0.7);
+}
+#instagram:hover {
+    color: rgba(187, 0, 176, 1);
+}
+.nav-link-icons {
+    padding: 0;
+    margin: 0;
+}
+/*==== STREAM ==== */
+.stream {
+    position: relative;
+    width: 100%;
+    display: block;
+    margin-top: 2rem;
+}
+.stream .top-stream, .stream .frame-stream, .stream .fsd-btns {
+    width: 72%;
+    margin: auto;
+}
+.stream .frame-stream {
+    height: 648px;
+    z-index: 1;
+}
+.top-stream, .top-stream-viewers-theater{
+    position: relative;
+    display: flex;
+    display: -ms-flex;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+}
+.pseudo {
+    color: rgba(188, 66, 222, 1);
+    font-size: 0.9rem;
+}
+.game {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 0.8rem;
+}
+.top-stream-title div:nth-child(2) {
+    margin-top: -10px;
+    padding: 0;
+}
+.title {
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+    padding: 0;
+    font-size: 1.4rem;
+}
+.night-mode .game {
+    color: rgba(255, 255, 255, 0.6);
+}
+.night-mode .title{
+    color: rgba(255, 255, 255, 1);
+}
+.top-stream-viewers-theater {
+    height: 50px;
+    width: 320px;
+    font-size: 1.1rem;
+    /*background-color: rgba(235, 235, 235, 1);
+    border-top: 4px solid rgba(139, 139, 139, 1);*/
+}
+.theater-block {
+    padding-top: 7px;
+    margin-top: auto;
+    padding-right: 35px;
+    margin-right: -15px;
+    height: 40px;
+    width: 170px;
+    background-color: rgba(235, 235, 235, 1);
+    border-top: 4px solid rgba(139, 139, 139, 1);
+}
+.night-mode .theater-block {
+    background-color: rgba(80, 80, 80, 1);
+    border-top: 4px solid rgba(188, 66, 222, 1);
+}
+.theater-block span:hover {
+    color: rgba(188, 66, 222, 0.8);
+}
+.night-mode .theater-block span:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+.night-mode .theater-block span {
+    color: rgba(255, 255, 255, 0.8);
+}
+.theater-block span i {
+    vertical-align: middle;
+}
+.transition-block {
+    height: 40px;
+    margin-left: auto;
+    margin-top: auto;
+    background-color: rgba(235, 235, 235, 1);
+    border-left: 4px solid rgba(139, 139, 139, 1);
+    width: 70px;
+    margin-right: -55px;
+    -webkit-transform: skewX(-35deg);
+    -moz-transform: skewX(-35deg);
+    -ms-transform: skewX(-35deg);
+    -o-transform: skewX(-35deg);
+    transform: skewX(-35deg);
+}
+.night-mode .transition-block {
+    background-color: rgba(80, 80, 80, 1);
+    border-left: 4px solid rgba(188, 66, 222, 1);
+}
+.viewers-block {
+    padding-top: 12px;
+    background-color: rgba(188, 66, 222, 1);
+    z-index: 0;
+    padding-right: 1rem;
+}
+.viewers-block span i {
+    vertical-align: middle;
+}
+.transition-block-viewers {
+    background-color: rgba(188, 66, 222, 1);
+    width: 70px;
+    margin-right: -40px;
+    border-left: 10px solid rgba(188, 66, 222, 1);
+    box-shadow: -4px 0px 0px rgba(144, 44, 202, 1);
+    -webkit-transform: skewX(-35deg);
+    -moz-transform: skewX(-35deg);
+    -ms-transform: skewX(-35deg);
+    -o-transform: skewX(-35deg);
+    transform: skewX(-35deg);
+}
+
+/*=============== MINI PLAYER ============== */
+.frame-stream-mini-player {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 384px;
+    height: 216px;
+}
+.frame-stream-mini-player iframe {
+    border-radius: 2rem;
+}
