@@ -22,7 +22,7 @@ body {
     flex-wrap: wrap;
 }
 .night-mode {
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 .website {
     width: 83%;
@@ -42,7 +42,7 @@ body {
     border-bottom: 2px solid rgba(188, 66, 222, 1);
 }
 .night-mode .navbar-bg {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(0, 0 , 0, 0.4);
     color: rgba(255, 255, 255, 0.8);
 }
 .navbar {
@@ -75,7 +75,6 @@ body {
 .night-mode .nav-link {
     color: rgba(255, 255, 255, 0.8);
 }
-
 .nav-item-toggler-night-mode {
     border: 2px solid rgba(188, 66, 222, 1);
     border-radius: 0.3rem;
@@ -129,6 +128,15 @@ body {
 .nav-link-icons {
     padding: 0;
     margin: 0;
+}
+.nav-link:hover {
+    color: rgba(188, 66, 222, 0.9);
+}
+.active {
+    color: rgba(188, 66, 222, 0.9);
+}
+.active .offline-mode{
+    color: #333;
 }
 /*==== STREAM ==== */
 .stream {

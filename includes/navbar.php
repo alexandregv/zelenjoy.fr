@@ -14,9 +14,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav navbar-font-nav">
-      <li class="nav-item <?php if($navPage === "Accueil") { echo "active"; } ?>"><a href="/" class="nav-link">Stream <?php if (isset($statusLive)) { echo $statusLive;}?></a></li>
-      <li class="nav-item <?php if($navPage === "Planning") { echo "active"; } ?>"><a href="<?php echo $URLs['Planning']; ?>" class="nav-link">Planning</a></li>
-      <li class="nav-item <?php if($navPage === "Informations") { echo "active"; } ?>"><a href="<?php echo $URLs['Informations']; ?>" class="nav-link">Informations</a></li>
+      <li class="nav-item"><a href="/" class="nav-link <?php if($navPage === "Stream") { echo "active"; } ?>">Stream <?php if (isset($statusLive)) { echo $statusLive;}?></a></li>
+      <li class="nav-item"><a href="<?php echo $URLs['Planning']; ?>" class="nav-link <?php if($navPage === "Planning") { echo "active"; } ?>">Planning</a></li>
+      <li class="nav-item"><a href="<?php echo $URLs['Informations']; ?>" class="nav-link <?php if($navPage === "Informations") { echo "active"; } ?>">Informations</a></li>
       <li class="nav-item"><a href="<?php echo $URLs['Rediffusions'] ?>" class="nav-link">Rediffusions</a></li>
     </ul>
     <ul class="navbar-nav navbar-font-nav ml-auto mr-3">
