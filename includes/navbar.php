@@ -17,6 +17,7 @@
       <li class="nav-item"><a href="/" class="nav-link <?php if($navPage === "Stream") { echo "active"; } ?>">Stream <?php if (isset($statusLive)) { echo $statusLive;}?></a></li>
       <li class="nav-item"><a href="<?php echo $URLs['Planning']; ?>" class="nav-link <?php if($navPage === "Planning") { echo "active"; } ?>">Planning</a></li>
       <li class="nav-item"><a href="<?php echo $URLs['Informations']; ?>" class="nav-link <?php if($navPage === "Informations") { echo "active"; } ?>">Informations</a></li>
+      <li class="nav-item"><a href="<?php echo $URLs['Leaderboard']; ?>" class="nav-link <?php if($navPage === "Leaderboard") { echo "active"; } ?>">Leaderboard</a></li>
       <li class="nav-item"><a href="<?php echo $URLs['Rediffusions'] ?>" class="nav-link">Rediffusions</a></li>
     </ul>
     <ul class="navbar-nav navbar-font-nav ml-auto mr-3">
