@@ -55,6 +55,17 @@
       </div>
     </div>
     <div class="chat">
+      <div class="btn-login-twitch">
+        <a href="" class="d-flex block-login">
+          <div class="">
+            <span class="text-1">Connexion</span><br>
+            <span class="subtext-1">avec twitch</span>
+          </div>
+          <div>
+            <i class="fab fa-twitch fa-3x"></i>
+          </div>
+        </a>
+      </div>
       <iframe frameborder="0"
               scrolling="no"
               id="chat_embed"
