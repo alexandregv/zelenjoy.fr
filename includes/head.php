@@ -25,6 +25,7 @@
     'Informations' => '/informations',
     'Rediffusions' => 'https://www.twitch.tv/zelenjoy/videos/all',
     'Planning' => '/planning',
+    'Leaderboard' => '/Leaderboard',
   );
 
 ?>
