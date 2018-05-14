@@ -21,7 +21,7 @@
           <div class="transition-block"></div>
           <div class="top-stream-viewers-theater">
             <div class="theater-block" id="toggle-class-theater-btn">
-              <span>mode theatre <i id="style-theater" class="fas fa-expand"></i></>
+              <span>Mode theatre <i id="style-theater" class="fas fa-expand"></i></span>
             </div>
             <div class="transition-block-viewers"></div>
             <div class="viewers-block">

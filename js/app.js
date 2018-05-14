@@ -3,30 +3,30 @@ $(document).ready(function(){
   if (!night) localStorage.setItem("night_mode", "false");
 
   if (night == "true") {
-    $("#toggle-class-style-btn").addClass("fa-toggle-on");
+    $("#night-btn-toggle").addClass("fa-toggle-on");
     $(".toggler").addClass("night-mode");
   }
   else {
-    $("#toggle-class-style-btn").addClass("fa-toggle-off");
+    $("#night-btn-toggle").addClass("fa-toggle-off");
     $(".toggler").removeClass("night-mode");
   }
 
-  $("#toggle-class-style-btn").click(function(){
+  $("#night-btn").click(function(){
     if (night == "true") {
       night = "false";
       $(".toggler").removeClass("night-mode");
       localStorage.setItem("night_mode", "false");
 
-      $("#toggle-class-style-btn").addClass("fa-toggle-off");
-      $("#toggle-class-style-btn").removeClass("fa-toggle-on");
+      $("#night-btn-toggle").addClass("fa-toggle-off");
+      $("#night-btn-toggle").removeClass("fa-toggle-on");
     }
     else {
       night = "true";
       $(".toggler").addClass("night-mode");
       localStorage.setItem("night_mode", "true");
 
-      $("#toggle-class-style-btn").addClass("fa-toggle-on");
-      $("#toggle-class-style-btn").removeClass("fa-toggle-off");
+      $("#night-btn-toggle").addClass("fa-toggle-on");
+      $("#night-btn-toggle").removeClass("fa-toggle-off");
     }
   });
 
