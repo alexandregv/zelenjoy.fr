@@ -88,7 +88,7 @@ body {
     vertical-align: middle;
     font-size: 20px;
 }
-.nav-item #discord, .nav-item #twitter, .nav-item #twitch, .nav-item #instagram {
+.nav-item #discord, .nav-item #twitter, .nav-item #twitch, .nav-item #instagram, .nav-item #snapchat {
     padding: 3px;
     margin: 0 3px;
     text-align: center;
@@ -116,6 +116,15 @@ body {
 }
 #instagram:hover {
     color: rgba(187, 0, 176, 1);
+}
+.snapchat, #snapchat {
+    color: rgba(218, 185, 0, 0.9);
+}
+.snapchat:hover {
+    color: rgba(218, 185, 0, 1);
+}
+#toggle-snap-name {
+    display: none;
 }
 .nav-link-icons {
     padding: 0;

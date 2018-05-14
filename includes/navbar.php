@@ -24,6 +24,7 @@
       <li class="nav-item"><a href="" class="nav-link nav-link-icons" id="twitter"><i class="fab fa-twitter"></i></a></li>
       <li class="nav-item"><a href="" class="nav-link nav-link-icons" id="twitch"><i class="fab fa-twitch"></i></a></li>
       <li class="nav-item"><a href="" class="nav-link nav-link-icons" id="instagram"><i class="fab fa-instagram"></i></a></li>
+      <li class="nav-item"><a class="nav-link nav-link-icons snapchat" id="snapchat"><i class="fab fa-snapchat-ghost"></i></a></li><span id="toggle-snap-name" class="snapchat">Bientôt !</span>
     </ul>
     <ul class="navbar-nav navbar-font-nav ">
       <li class="nav-item nav-item-toggler-night-mode" id="">

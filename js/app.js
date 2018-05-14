@@ -1,4 +1,8 @@
 $(document).ready(function(){
+  $('#snapchat').click(function () {
+    $('#toggle-snap-name').toggle('slow');
+  });
+
   var night = localStorage.getItem("night_mode");
   if (!night) localStorage.setItem("night_mode", "false");
 
