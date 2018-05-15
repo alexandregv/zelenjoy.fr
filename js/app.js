@@ -5,10 +5,12 @@ $(document).ready(function(){
   if (night == "true") {
     $("#night-btn-toggle").addClass("fa-toggle-on");
     $(".toggler").addClass("night-mode");
+    document.getElementById("chat_embed").src = "https://www.twitch.tv/embed/zelenjoy/chat?darkpopout";
   }
   else {
     $("#night-btn-toggle").addClass("fa-toggle-off");
     $(".toggler").removeClass("night-mode");
+    document.getElementById("chat_embed").src = "https://www.twitch.tv/embed/zelenjoy/chat";
   }
 
   $("#night-btn").click(function(){

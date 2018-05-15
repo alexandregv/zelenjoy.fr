@@ -16,7 +16,7 @@
 
         <div class="top-stream">
           <div class="top-stream-title">
-            <div class="title"><?php if (isset($titleLive)) { if (strlen($titleLive) >= 65) { $titlecut = substr($titleLive, 0, 65) . '...'; echo $titlecut;} else {echo $titleLive;}}?></div>
+            <div class="title"><?php echo ((strlen($titleLive) >= 65) ? (substr($titleLive, 0, 65) . '...') : $titleLive); ?></div>
             <div><span class="pseudo"><?php if (isset($pseudo)) {echo $pseudo;}?></span> <span class="game">joue à <?php if(isset($gameLive)) { echo $gameLive;}?></span></div>
           </div>
           <div class="transition-block"></div>
@@ -60,7 +60,7 @@
        if(isset($_COOKIE["twitch_access_token"])){
            $ch = curl_init('https://api.twitch.tv/helix/users');
            curl_setopt_array($ch, array(
-               CURLOPT_HTTPHEADER  => array("Client-ID: qml5b1xcchymsysftuik4mm9tzj0yj", "Authorization: Bearer {$_COOKIE["twitch_access_token"]}"),
+               CURLOPT_HTTPHEADER  => array("Client-ID: {$twitch_client_id}", "Authorization: Bearer {$_COOKIE["twitch_access_token"]}"),
                CURLOPT_RETURNTRANSFER  => true,
                CURLOPT_VERBOSE     => 1
            ));
@@ -68,7 +68,7 @@
            curl_close($ch);
            $response = json_decode($response_str);
            if (isset($response->error)){
-             include "auth/refresh.php";
+             require "api/twitch/refresh.php";
            }else{
               $response = $response->data[0];
            }
@@ -87,7 +87,7 @@
             <div class="block-login">
                 <a href="" class="d-flex">
                     <div class="text-login">
-                        <div class="text-1"><?php echo $response->display_name; ?></div>
+                        <div class="text-1"><?php echo ((strlen($response->display_name) >= 13) ? (substr($response->display_name, 0, 13) . '...') : $response->display_name); ?></div>
                         <div class="subtext-1"><?php echo "lvl. {$lvl} - {$lvl_xp}/{$xp_per_lvl} xp"; ?></div>
                         <div class="subtext-2"><?php echo "{$cookies} cookies"; ?></div>
                     </div>
@@ -100,7 +100,7 @@
        <?php }else{ ?>
         <div class="btn-login-twitch">
             <div class="block-login">
-                <a href="https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=qml5b1xcchymsysftuik4mm9tzj0yj&redirect_uri=http://v2.zelenjoy.fr/auth/twitch&scope=user_read+user_follows_edit" class="d-flex">
+                <a href="https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=<?= $twitch_client_id ?>&redirect_uri=http://v2.zelenjoy.fr/api/twitch/login&scope=user_read+user_follows_edit" class="d-flex">
                     <div class="text-login">
                         <div class="text-1">Connexion</div>
                         <div class="subtext-1">avec twitch</div>
@@ -117,7 +117,7 @@
       <iframe frameborder="0"
               scrolling="no"
               id="chat_embed"
-              src="<?php echo "https://www.twitch.tv/embed/{$channel}/chat"; ?>"
+              src="https://www.twitch.tv/embed/<?= $channel ?>/chat"
               height="100%"
               width="100%">
       </iframe>
