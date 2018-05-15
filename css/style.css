@@ -84,6 +84,10 @@ body {
 .text-login .subtext-1 {
     font-size: 0.9rem;
 }
+.text-login .subtext-2 {
+    font-size: 0.9rem;
+    margin-top: -0.4rem;
+}
 .chat iframe {
     position: fixed;
     top: 26px;
@@ -313,4 +317,11 @@ body {
 }
 .frame-stream-mini-player iframe {
     border-radius: 2rem;
+}
+
+.user-logo {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

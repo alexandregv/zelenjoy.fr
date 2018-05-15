@@ -55,19 +55,62 @@
       </div>
     </div>
     <div class="chat">
-      <div class="btn-login-twitch">
-        <div class="block-login">
-          <a href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=qml5b1xcchymsysftuik4mm9tzj0yj&redirect_uri=http://v2.zelenjoy.fr/auth/twitch&scope=user_read+user_follows_edit" class="d-flex">
-            <div class="text-login">
-              <div class="text-1">Connexion</div>
-              <div class="subtext-1">avec twitch</div>
+     <?php //TODO: Vérifier si token expiré, puis créer/afficher compte du gars
+       if(isset($_COOKIE["twitch_token"])){
+           $ch = curl_init('https://api.twitch.tv/kraken/user');
+           curl_setopt_array($ch, array(
+               CURLOPT_HTTPHEADER  => array("Client-ID: qml5b1xcchymsysftuik4mm9tzj0yj", "Authorization: OAuth {$_COOKIE["twitch_token"]}"),
+               CURLOPT_RETURNTRANSFER  => true,
+               CURLOPT_VERBOSE     => 1
+           ));
+           $response_str = curl_exec($ch);
+           curl_close($ch);
+           $response = json_decode($response_str);
+           if (isset($response->error)){ ?>
+             <script>
+                 alert("Une erreur est survenue: <?php echo $response_str; ?>");
+             </script>
+           <?php }
+
+           $streamlabs = json_decode(file_get_contents("https://streamlabs.com/api/v1.0/points?access_token=t44FpCOYqZsA4BLsbE7YUMn0nLIVHrMWuajyaNDx&username={$response->name}&channel=zelenjoy"));
+           $cookies = $streamlabs->points;
+           $total_xp = $streamlabs->time_watched;
+           $xp_per_lvl = 4500;
+           $lvl_xp = $total_xp % $xp_per_lvl;
+           $lvl = floor($total_xp / $xp_per_lvl);
+
+        ?>
+           <div class="btn-login-twitch">
+            <div class="block-login">
+                <a href="" class="d-flex">
+                    <div class="text-login">
+                        <div class="text-1"><?php echo $response->display_name; ?></div>
+                        <div class="subtext-1"><?php echo "lvl. {$lvl} - {$lvl_xp}/{$xp_per_lvl} xp"; ?></div>
+                        <div class="subtext-2"><?php echo "{$cookies} cookies"; ?></div>
+                    </div>
+                    <div class="icon-login">
+                        <img src="<?= $response->logo; ?>" width="64" height="64" class="user-logo"/>
+                    </div>
+                </a>
             </div>
-            <div class="icon-login">
-              <i class="fab fa-twitch fa-3x"></i>
-            </div>
-          </a>
         </div>
-      </div>
+       <?php }else{ ?>
+        <div class="btn-login-twitch">
+            <div class="block-login">
+                <a href="https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=qml5b1xcchymsysftuik4mm9tzj0yj&redirect_uri=http://v2.zelenjoy.fr/auth/twitch&scope=user_read+user_follows_edit" class="d-flex">
+                    <div class="text-login">
+                        <div class="text-1">Connexion</div>
+                        <div class="subtext-1">avec twitch</div>
+                    </div>
+                    <div class="icon-login">
+                        <i class="fab fa-twitch fa-3x"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+       <?php }
+     ?>
+
       <iframe frameborder="0"
               scrolling="no"
               id="chat_embed"
