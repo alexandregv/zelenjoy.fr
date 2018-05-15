@@ -21,9 +21,9 @@
       <li class="nav-item"><a href="<?php echo $URLs['Rediffusions'] ?>" class="nav-link">Rediffusions</a></li>
     </ul>
     <ul class="navbar-nav navbar-font-nav ml-auto mr-3">
-      <li class="nav-item"><a href="" class="nav-link nav-link-icons" id="discord"><i class="fab fa-discord"></i></a></li>
-      <li class="nav-item"><a href="" class="nav-link nav-link-icons" id="twitter"><i class="fab fa-twitter"></i></a></li>
-      <li class="nav-item"><a href="" class="nav-link nav-link-icons" id="twitch"><i class="fab fa-twitch"></i></a></li>
+      <li class="nav-item"><a href="http://discord.zelenjoy.fr/" class="nav-link nav-link-icons" id="discord"><i class="fab fa-discord"></i></a></li>
+      <li class="nav-item"><a href="https://twitter.com/EnjoyZel" class="nav-link nav-link-icons" id="twitter"><i class="fab fa-twitter"></i></a></li>
+      <li class="nav-item"><a href="https://www.twitch.tv/zelenjoy" class="nav-link nav-link-icons" id="twitch"><i class="fab fa-twitch"></i></a></li>
       <li class="nav-item"><a href="" class="nav-link nav-link-icons" id="instagram"><i class="fab fa-instagram"></i></a></li>
       <li class="nav-item"><a class="nav-link nav-link-icons snapchat" id="snapchat"><i class="fab fa-snapchat-ghost"></i></a></li><span id="toggle-snap-name" class="snapchat">Bientôt !</span>
     </ul>
