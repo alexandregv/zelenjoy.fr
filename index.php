@@ -1,5 +1,6 @@
 <?php
   session_start();
+  ob_start();
 
   $title = 'ZelEnjoy - Stream';
   $navPage = 'Stream';
@@ -32,7 +33,7 @@
 
         <div class="frame-stream">
           <!-- CHANNEL -->
-          <iframe src="<?php echo "https://player.twitch.tv/?channel=zelenjoy"; ?>"
+          <iframe src="<?php echo "https://player.twitch.tv/?channel={$channel}"; ?>"
                   width="100%"
                   height="100%"
                   autoplay=""
@@ -56,23 +57,25 @@
     </div>
     <div class="chat">
      <?php //TODO: Vérifier si token expiré, puis créer/afficher compte du gars
-       if(isset($_COOKIE["twitch_token"])){
-           $ch = curl_init('https://api.twitch.tv/kraken/user');
+       if(isset($_COOKIE["twitch_access_token"])){
+           $ch = curl_init('https://api.twitch.tv/helix/users');
            curl_setopt_array($ch, array(
-               CURLOPT_HTTPHEADER  => array("Client-ID: qml5b1xcchymsysftuik4mm9tzj0yj", "Authorization: OAuth {$_COOKIE["twitch_token"]}"),
+               CURLOPT_HTTPHEADER  => array("Client-ID: qml5b1xcchymsysftuik4mm9tzj0yj", "Authorization: Bearer {$_COOKIE["twitch_access_token"]}"),
                CURLOPT_RETURNTRANSFER  => true,
                CURLOPT_VERBOSE     => 1
            ));
            $response_str = curl_exec($ch);
            curl_close($ch);
            $response = json_decode($response_str);
-           if (isset($response->error)){ ?>
-             <script>
-                 alert("Une erreur est survenue: <?php echo $response_str; ?>");
-             </script>
-           <?php }
+           if (isset($response->error)){
+             include "auth/refresh.php";
+           }else{
+              $response = $response->data[0];
+           }
 
-           $streamlabs = json_decode(file_get_contents("https://streamlabs.com/api/v1.0/points?access_token=t44FpCOYqZsA4BLsbE7YUMn0nLIVHrMWuajyaNDx&username={$response->name}&channel=zelenjoy"));
+           ob_end_flush();
+
+           $streamlabs = json_decode(file_get_contents("https://streamlabs.com/api/v1.0/points?access_token=t44FpCOYqZsA4BLsbE7YUMn0nLIVHrMWuajyaNDx&username={$response->login}&channel={$channel}"));
            $cookies = $streamlabs->points;
            $total_xp = $streamlabs->time_watched;
            $xp_per_lvl = 4500;
@@ -89,7 +92,7 @@
                         <div class="subtext-2"><?php echo "{$cookies} cookies"; ?></div>
                     </div>
                     <div class="icon-login">
-                        <img src="<?= $response->logo; ?>" width="64" height="64" class="user-logo"/>
+                        <img src="<?= $response->profile_image_url; ?>" width="64" height="64" class="user-logo"/>
                     </div>
                 </a>
             </div>
@@ -114,7 +117,7 @@
       <iframe frameborder="0"
               scrolling="no"
               id="chat_embed"
-              src="<?php echo "https://www.twitch.tv/embed/zelenjoy/chat?darkpopout"; ?>"
+              src="<?php echo "https://www.twitch.tv/embed/{$channel}/chat"; ?>"
               height="100%"
               width="100%">
       </iframe>
