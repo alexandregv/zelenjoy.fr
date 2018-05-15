@@ -365,6 +365,12 @@ body {
     background-color: rgba(255, 255, 255, 1);
     border-bottom: rgba(188, 66, 222, 1) 2px solid;
 }
+.btn-on-logged-twitch .sub-account {
+    display: block;
+    width: 100%;
+    background-color: rgba(32, 32, 32, 1);
+    border-bottom: rgba(188, 66, 222, 1) 2px solid;
+}
 .block-account {
     width: 100%;
 }
