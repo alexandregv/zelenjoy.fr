@@ -20,7 +20,7 @@
           </div>
           <div class="viewers ml-auto mr-3">
             <div class="text-center count">
-              <?php echo "99999"; ?>
+              <?php if(isset($viewers)) {echo $viewers;} ?>
             </div>
             <div class="text-center subtitle">
               viewers
@@ -60,7 +60,7 @@
                 <div class="icon-subs">
                   <i class="fas fa-star"></i>
                 </div>
-            </a>
+              </a>
 
               <a href="https://streamlabs.com/zelenjoy" class="btn-donate-block">
                 <div class="text-donate">
@@ -69,7 +69,7 @@
                 <div class="icon-donate">
                   <i class="fas fa-money-bill-wave"></i>
                 </div>
-            </a>
+              </a>
 
             </div>
 
@@ -86,7 +86,7 @@
 
             </div>
           </div>
-          </div>
+        </div>
 
       </div>
     </div>
