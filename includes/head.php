@@ -13,7 +13,7 @@
     $streamsOffline = json_decode(file_get_contents("https://api.twitch.tv/kraken/channels/" .$channel. "?client_id=" .$twitch_client_id));
     $titleLive = $streamsOffline->status;
     $statusLive = "<i class='fas fa-circle offline-mode'></i>";
-    $viewers = "Stream Offline";
+    $viewers = "0";
   }
   $channelStream = json_decode(file_get_contents("https://api.twitch.tv/kraken/channels/" .$channel. "?client_id=" .$twitch_client_id));
   $followLive = $channelStream->followers;
@@ -26,6 +26,7 @@
     'Informations' => '/informations',
     'Rediffusions' => "https://www.twitch.tv/{$channel}/videos/all",
     'Planning' => '/planning',
+    'Leaderboard' => '/Leaderboard',
   );
 
 ?>

@@ -19,14 +19,12 @@
             <div class="title"><?php echo ((strlen($titleLive) >= 65) ? (substr($titleLive, 0, 65) . '...') : $titleLive); ?></div>
             <div><span class="pseudo"><?php if (isset($pseudo)) {echo $pseudo;}?></span> <span class="game">joue à <?php if(isset($gameLive)) { echo $gameLive;}?></span></div>
           </div>
-          <div class="transition-block"></div>
-          <div class="top-stream-viewers-theater">
-            <div class="theater-block" id="toggle-class-theater-btn">
-              <span>Mode theatre <i id="style-theater" class="fas fa-expand"></i></span>
+          <div class="viewers ml-auto mr-3">
+            <div class="text-center count">
+              <?php if(isset($viewers)) {echo $viewers;} ?>
             </div>
-            <div class="transition-block-viewers"></div>
-            <div class="viewers-block">
-              <span id="viewers"><?php if (isset($viewers)){echo $viewers;} ?></span>
+            <div class="text-center subtitle">
+              viewers
             </div>
           </div>
         </div>
@@ -41,16 +39,54 @@
                   frameborder="0">
           </iframe>
         </div>
-        <div class="fsd-btns">
-          <a href="" class="">
-            <h4>Follow</h4>
-          </a>
-          <a href="">
-            <h4>Subscribe</h4>
-          </a>
-          <a href="">
-            <h4>Donation</h4>
-          </a>
+        <div class="fsdt-btn">
+          <div class="d-flex">
+            <div class="fsd-btn">
+              <form action="auth/follow.php" class="btn-follow-block">
+
+                <div class="text-follow">
+                  Suis moi !
+                </div>
+
+                <div class="icon-follow">
+                  <i class="fas fa-heart"></i>
+                </div>
+
+              </form>
+
+              <a href="https://www.twitch.tv/products/zelenjoy" class="btn-subs-block">
+                <div class="text-subs">
+                  Abonne-toi !
+                </div>
+                <div class="icon-subs">
+                  <i class="fas fa-star"></i>
+                </div>
+              </a>
+
+              <a href="https://streamlabs.com/zelenjoy" class="btn-donate-block">
+                <div class="text-donate">
+                  Soutiens moi !
+                </div>
+                <div class="icon-donate">
+                  <i class="fas fa-money-bill-wave"></i>
+                </div>
+              </a>
+
+            </div>
+
+            <div class="theater-btn">
+
+              <div class="btn-block" id="toggle-class-theater-btn">
+                <div class="text-theater">
+                  Mode théâtre
+                </div>
+                <div class="icon-theater">
+                  <i id="style-theater" class="fas fa-expand "></i>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
       </div>
