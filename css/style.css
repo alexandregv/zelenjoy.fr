@@ -48,46 +48,6 @@ body {
     width: 17%;
     right: 0;
 }
-.chat .btn-login-twitch {
-    top: 0;
-    width: 100%;
-    background-color: rgba(155, 55, 183, 1);
-    z-index: 1;
-    height: 75px;
-}
-.icon-login {
-    width: 25%;
-    height: 75px;
-    background-color: rgba(155, 55, 183, 1);
-    padding-top: 13px;
-    padding-left: 20px;
-}
-.block-login a{
-    color: #FFF;
-}
-.block-login:hover a, .block-login:visited a, .block-login:active a, .block-login:link a{
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-}
-
-.text-login {
-    width: 75%;
-    height: 75px;
-    background-color: rgba(188, 66, 222, 1);
-    padding-top: 13px;
-    padding-left: 40px;
-}
-.text-login .text-1 {
-    font-size: 1.6rem;
-    margin-bottom: -10px;
-}
-.text-login .subtext-1 {
-    font-size: 0.9rem;
-}
-.text-login .subtext-2 {
-    font-size: 0.9rem;
-    margin-top: -0.4rem;
-}
 .chat iframe {
     position: fixed;
     top: 26px;
@@ -315,13 +275,138 @@ body {
     width: 384px;
     height: 216px;
 }
-.frame-stream-mini-player iframe {
-    border-radius: 2rem;
+/*================= TWITCH LOGIN ================= */
+.btn-login-twitch {
+    position: relative;
+    width: 100%;
+    height: 75px;
+}
+.block-login {
+    background-color: rgba(188, 66, 222, 1);
+    height: 75px;
+}
+.text-login {
+    width: 75%;
+    height: 75px;
+    text-align: left;
+    padding-left: 2rem;
+    padding-top: 9px;
+}
+.text-login>.text-1 {
+    font-size: 1.6rem;
+    margin-bottom: -10px;
+}
+.block-login a, .block-login:active a, .block-login:visited a, .block-login:link a  {
+    color: #FFF;
+}
+.block-login:hover a{
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+.icon-login {
+    width: 25%;
+    height: 75px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.icon-login i {
+    margin-top: 11px;
+    margin-left: 17px;
+}
+/* ====== ON LOGGED ====== */
+.btn-on-logged-twitch {
+    width: 100%;
+    height: 75px;
+}
+.block-logged {
+    background-color: rgba(188, 66, 222, 1);
+    height: 75px;
+}
+.text-logged {
+    width: 75%;
+    padding: 0 10px;
+}
+.text-logged .pseudo-twitch {
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: -10px;
+}
+.text-logged .xp {
+    font-size: 14px;
+}
+.logo-logged {
+    width: 25%;
+    height: 75px;
+    padding: 0 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.logo-logged img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-left: 12px;
+    margin-top: 6px;
+}
+.logo-logged .lvl {
+    font-size: 12px;
+    text-align: center;
+}
+.dropdown-account {
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+/* ====== ON HOVER ======= */
+.btn-on-logged-twitch .sub-account {
+    display: none;
+}
+.btn-on-logged-twitch:hover .sub-account {
+    display: block;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    border-bottom: rgba(188, 66, 222, 1) 2px solid;
+}
+.btn-on-logged-twitch:hover .sub-account {
+    display: block;
+    width: 100%;
+    background-color: rgba(32, 32, 32, 1);
+    border-bottom: rgba(188, 66, 222, 1) 2px solid;
+}
+.block-account {
+    width: 100%;
+}
+.night-mode .profile, .night-mode .disconnect {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    color: #FFF;
+}
+.profile, .disconnect {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    color: #333;
+}
+.profile:hover, .disconnect:hover {
+    background-color: rgba(188, 66, 222, 1);
+    color: #FFF;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+.profile>.icon-profile, .disconnect>.icon-disconnect {
+    width: 35px;
+    height: 35px;
+    font-size: 23px;
+    margin-top: 5px;
+}
+.profile>.text-profile, .disconnect>.text-disconnect {
+    margin-left: auto;
+    margin-top: 5px;
 }
 
-.user-logo {
-    border-radius: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+.profile>.text-profile>i, .disconnect>.text-disconnect>i {
+     vertical-align: middle;
+ }

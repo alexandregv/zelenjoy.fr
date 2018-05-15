@@ -83,20 +83,49 @@
            $lvl = floor($total_xp / $xp_per_lvl);
 
         ?>
-           <div class="btn-login-twitch">
-            <div class="block-login">
-                <a href="" class="d-flex">
-                    <div class="text-login">
-                        <div class="text-1"><?php echo ((strlen($response->display_name) >= 13) ? (substr($response->display_name, 0, 13) . '...') : $response->display_name); ?></div>
-                        <div class="subtext-1"><?php echo "lvl. {$lvl} - {$lvl_xp}/{$xp_per_lvl} xp"; ?></div>
-                        <div class="subtext-2"><?php echo "{$cookies} cookies"; ?></div>
-                    </div>
-                    <div class="icon-login">
-                        <img src="<?= $response->profile_image_url; ?>" width="64" height="64" class="user-logo"/>
-                    </div>
-                </a>
-            </div>
-        </div>
+         <div class="btn-on-logged-twitch">
+           <div class="block-logged">
+             <div class="d-flex">
+               <div class="text-logged d-flex">
+                 <div>
+                   <div class="pseudo-twitch"><?php echo ((strlen($response->display_name) >= 13) ? (substr($response->display_name, 0, 13) . '...') : $response->display_name); ?></div>
+                   <div class="xp"><?= "{$lvl_xp}/{$xp_per_lvl}" ?></div>
+                   <div class="cookies"><?= "{$cookies} cookies" ?></div>
+                 </div>
+                 <div class="dropdown-account">
+                   <i class="fas fa-angle-down fa-2x"></i>
+                 </div>
+               </div>
+               <div class="logo-logged">
+                 <img src="<?= $response->profile_image_url; ?>" class="user-logo"/>
+                 <div class="lvl"><?= "lvl. {$lvl}" ?></div>
+               </div>
+             </div>
+           </div>
+           <div class="sub-account">
+             <div class="block-account">
+
+               <a href="" class="profile">
+                 <div class="icon-profile">
+                   <i class="fas fa-user"></i>
+                 </div>
+                 <div class="text-profile">
+                   Voir mon profil <i class="fas fa-angle-right"></i>
+                 </div>
+               </a>
+
+               <a href="" class="disconnect">
+                 <div class="icon-disconnect">
+                   <i class="fas fa-sign-out-alt"></i>
+                 </div>
+                 <div class="text-disconnect">
+                   Déconnexion <i class="fas fa-angle-right"></i>
+                 </div>
+               </a>
+
+             </div>
+           </div>
+         </div>
        <?php }else{ ?>
         <div class="btn-login-twitch">
             <div class="block-login">
