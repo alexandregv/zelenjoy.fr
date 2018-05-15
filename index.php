@@ -1,5 +1,6 @@
 <?php
   session_start();
+  ob_start();
 
   $title = 'ZelEnjoy - Stream';
   $navPage = 'Stream';
@@ -15,13 +16,13 @@
 
         <div class="top-stream">
           <div class="top-stream-title">
-            <div class="title"><?php if (isset($titleLive)) { if (strlen($titleLive) >= 65) { $titlecut = substr($titleLive, 0, 65) . '...'; echo $titlecut;} else {echo $titleLive;}}?></div>
+            <div class="title"><?php echo ((strlen($titleLive) >= 65) ? (substr($titleLive, 0, 65) . '...') : $titleLive); ?></div>
             <div><span class="pseudo"><?php if (isset($pseudo)) {echo $pseudo;}?></span> <span class="game">joue à <?php if(isset($gameLive)) { echo $gameLive;}?></span></div>
           </div>
           <div class="transition-block"></div>
           <div class="top-stream-viewers-theater">
             <div class="theater-block" id="toggle-class-theater-btn">
-              <span>mode theatre <i id="style-theater" class="fas fa-expand"></i></>
+              <span>Mode theatre <i id="style-theater" class="fas fa-expand"></i></span>
             </div>
             <div class="transition-block-viewers"></div>
             <div class="viewers-block">
@@ -32,7 +33,7 @@
 
         <div class="frame-stream">
           <!-- CHANNEL -->
-          <iframe src="<?php echo "https://player.twitch.tv/?channel=zelenjoy"; ?>"
+          <iframe src="<?php echo "https://player.twitch.tv/?channel={$channel}"; ?>"
                   width="100%"
                   height="100%"
                   autoplay=""
@@ -55,10 +56,97 @@
       </div>
     </div>
     <div class="chat">
+     <?php //TODO: Vérifier si token expiré, puis créer/afficher compte du gars
+       if(isset($_COOKIE["twitch_access_token"])){
+           $ch = curl_init('https://api.twitch.tv/helix/users');
+           curl_setopt_array($ch, array(
+               CURLOPT_HTTPHEADER  => array("Client-ID: {$twitch_client_id}", "Authorization: Bearer {$_COOKIE["twitch_access_token"]}"),
+               CURLOPT_RETURNTRANSFER  => true,
+               CURLOPT_VERBOSE     => 1
+           ));
+           $response_str = curl_exec($ch);
+           curl_close($ch);
+           $response = json_decode($response_str);
+           if (isset($response->error)){
+             require "api/twitch/refresh.php";
+           }else{
+              $response = $response->data[0];
+           }
+
+           ob_end_flush();
+
+           $streamlabs = json_decode(file_get_contents("https://streamlabs.com/api/v1.0/points?access_token=t44FpCOYqZsA4BLsbE7YUMn0nLIVHrMWuajyaNDx&username={$response->login}&channel={$channel}"));
+           $cookies = $streamlabs->points;
+           $total_xp = $streamlabs->time_watched;
+           $xp_per_lvl = 4500;
+           $lvl_xp = $total_xp % $xp_per_lvl;
+           $lvl = floor($total_xp / $xp_per_lvl);
+
+        ?>
+         <div class="btn-on-logged-twitch">
+           <div class="block-logged">
+             <div class="d-flex">
+               <div class="text-logged d-flex">
+                 <div>
+                   <div class="pseudo-twitch"><?php echo ((strlen($response->display_name) >= 13) ? (substr($response->display_name, 0, 13) . '...') : $response->display_name); ?></div>
+                   <div class="xp"><?= "{$lvl_xp}/{$xp_per_lvl}" ?></div>
+                   <div class="cookies"><?= "{$cookies} cookies" ?></div>
+                 </div>
+                 <div class="dropdown-account">
+                   <i class="fas fa-angle-down fa-2x"></i>
+                 </div>
+               </div>
+               <div class="logo-logged">
+                 <img src="<?= $response->profile_image_url; ?>" class="user-logo"/>
+                 <div class="lvl"><?= "lvl. {$lvl}" ?></div>
+               </div>
+             </div>
+           </div>
+           <div class="sub-account">
+             <div class="block-account">
+
+               <a href="" class="profile">
+                 <div class="icon-profile">
+                   <i class="fas fa-user"></i>
+                 </div>
+                 <div class="text-profile">
+                   Voir mon profil <i class="fas fa-angle-right"></i>
+                 </div>
+               </a>
+
+               <a href="" class="disconnect">
+                 <div class="icon-disconnect">
+                   <i class="fas fa-sign-out-alt"></i>
+                 </div>
+                 <div class="text-disconnect">
+                   Déconnexion <i class="fas fa-angle-right"></i>
+                 </div>
+               </a>
+
+             </div>
+           </div>
+         </div>
+       <?php }else{ ?>
+        <div class="btn-login-twitch">
+            <div class="block-login">
+                <a href="https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=<?= $twitch_client_id ?>&redirect_uri=http://v2.zelenjoy.fr/api/twitch/login&scope=user_read+user_follows_edit" class="d-flex">
+                    <div class="text-login">
+                        <div class="text-1">Connexion</div>
+                        <div class="subtext-1">avec twitch</div>
+                    </div>
+                    <div class="icon-login">
+                        <i class="fab fa-twitch fa-3x"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+       <?php }
+     ?>
+
       <iframe frameborder="0"
               scrolling="no"
               id="chat_embed"
-              src="<?php echo "https://www.twitch.tv/embed/zelenjoy/chat?darkpopout"; ?>"
+              src="https://www.twitch.tv/embed/<?= $channel ?>/chat"
               height="100%"
               width="100%">
       </iframe>

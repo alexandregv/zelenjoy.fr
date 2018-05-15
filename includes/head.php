@@ -1,6 +1,7 @@
 <?php
-  require './includes/stream.php';
-  $streams = json_decode(file_get_contents("https://api.twitch.tv/kraken/streams/" .$channel. "?client_id=" .$clientId));
+  require 'global_vars.php';
+
+  $streams = json_decode(file_get_contents("https://api.twitch.tv/kraken/streams/" .$channel. "?client_id=" .$twitch_client_id));
 
   if ($streams->stream != null) {
     $_SESSION['streamon'] = time();
@@ -9,12 +10,12 @@
     $viewers = $streams->stream->viewers. " <i class=\"fas fa-eye\"></i>";
     $gameLive = $streams->stream->game;
   }else {
-    $streamsOffline = json_decode(file_get_contents("https://api.twitch.tv/kraken/channels/" .$channel. "?client_id=" .$clientId));
+    $streamsOffline = json_decode(file_get_contents("https://api.twitch.tv/kraken/channels/" .$channel. "?client_id=" .$twitch_client_id));
     $titleLive = $streamsOffline->status;
     $statusLive = "<i class='fas fa-circle offline-mode'></i>";
     $viewers = "Stream Offline";
   }
-  $channelStream = json_decode(file_get_contents("https://api.twitch.tv/kraken/channels/" .$channel. "?client_id=" .$clientId));
+  $channelStream = json_decode(file_get_contents("https://api.twitch.tv/kraken/channels/" .$channel. "?client_id=" .$twitch_client_id));
   $followLive = $channelStream->followers;
   $language = $channelStream->language;
   $pseudo = $channelStream->display_name;
@@ -23,7 +24,7 @@
   $URLs = array(
     'Accueil' => '/',
     'Informations' => '/informations',
-    'Rediffusions' => 'https://www.twitch.tv/zelenjoy/videos/all',
+    'Rediffusions' => "https://www.twitch.tv/{$channel}/videos/all",
     'Planning' => '/planning',
   );
 
@@ -41,14 +42,7 @@
 <meta name="keywords" content="" />
 
 <!-- Google API fonts -->
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,300,300italic,400italic,600,600italic,700italic,700,800italic" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
-<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet'>
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 <!-- FontAwesome 5.0.2 -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">

@@ -28,7 +28,7 @@
     </ul>
     <ul class="navbar-nav navbar-font-nav ">
       <li class="nav-item nav-item-toggler-night-mode" id="">
-        <span class="nav-link">mode nuit <i id="toggle-class-style-btn" class="fas "></i></span>
+        <span class="nav-link" id="night-btn">Mode nuit <i id="night-btn-toggle" class="fas "></i></span>
       </li>
     </ul>
   </div>
