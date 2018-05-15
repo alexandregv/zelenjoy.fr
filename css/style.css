@@ -145,7 +145,7 @@ body {
     display: block;
     margin-top: 2rem;
 }
-.stream .top-stream, .stream .frame-stream, .stream .fsd-btns {
+.stream .top-stream, .stream .frame-stream, .stream .fsdt-btn {
     width: 72%;
     margin: auto;
 }
@@ -198,60 +198,83 @@ body {
     font-size: 0.9rem;
     margin-top: -10px;
 }
+/*=============== FSDT BUTTON ============== */
+.theater-btn {
+    margin-left: auto;
+}
+.btn-follow-block, .btn-donate-block, .btn-subs-block {
+    display: block;
+    background-color: rgba(188, 66, 222, 1);
+    margin-top: 5px;
+    margin-right: 5px;
+    height: 35px;
+    border-radius: 0.2rem;
+    color: #FFF;
+}
+.theater-btn .btn-block {
+    display: block;
+    background-color: rgba(188, 66, 222, 1);
+    margin-top: 5px;
+    height: 35px;
+    border-radius: 0.2rem;
+    color: #FFF;
+}
+.theater-btn .btn-block:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+.btn-follow-block:hover, .btn-donate-block:hover, .btn-subs-block:hover {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+.btn-follow-block .text-follow {
+    text-align: center;
+    padding: 5px 0;
+    width: 100px;
+}
+.btn-donate-block .text-donate, .btn-subs-block .text-subs {
+    text-align: center;
+    padding: 5px 0;
+    width: 130px;
+}
+.btn-block .text-theater {
+    text-align: center;
+    padding: 5px 0;
+    width: 130px;
+}
+.btn-block .icon-theater {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.btn-follow-block .icon-follow, .btn-subs-block .icon-subs, .btn-donate-block .icon-donate {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.icon-follow i,.icon-subs i, .icon-donate i {
+    margin-top: 8px;
+    margin-left: 7px;
+}
+.icon-donate i {
+    margin-top: 8px;
+    margin-left: 5px;
+}
+.icon-theater i {
+    margin-top: 7px;
+    margin-left: 8px;
+}
 
-/*=============== FSD BUTTON ============== */
-/*.fsd-btns {
-    display: -ms-flex;
+.fsd-btn, .theater-btn .btn-block, .btn-subs-block, .btn-follow-block, .btn-donate-block {
     display: flex;
+    display: -ms-flex;
 }
-.fsd-btn {
-    position: relative;
-    height: 35px;
-    margin: 5px 10px 0 0;
+.theater-btn .icon-theater, .btn-follow-block .icon-follow, .btn-subs-block .icon-subs, .btn-donate-block .icon-donate {
+    font-size: 20px;
 }
-.fsd-btn#follow {
-    width: 120px;
+.theater-btn .text-theater, .btn-follow-block .text-follow, .btn-subs-block .text-subs, .btn-donate-block .text-donate {
+    font-size: 18px;
 }
-.fsd-btn#subs {
-    width: 125px;
-}
-.fsd-btn#donate {
-    width: 140px;
-}
-.text-block-fsd {
-    width: 80%;
-    height: 35px;
-    background-color: #eeeeee;
-    border-bottom-left-radius: 0.2rem;
-    border-top-left-radius: 0.2rem;
-    padding-top: 6px;
-    padding-left: 3px;
-    border-color: #DDD;
-    border-top: 1px solid;
-    border-left: 1px solid;
-    border-bottom: 1px solid;
-}
-.icon-block-fsd {
-    width: 20%;
-    height: 35px;
-    background-color: #AAA;
-    padding-top: 9px;
-    padding-left: 4px;
-    border-bottom-right-radius: 0.2rem;
-    border-top-right-radius: 0.2rem;
-    border-color: #DDD;
-    border-top: 1px solid;
-    border-right: 1px solid;
-    border-bottom: 1px solid;
-}
-.fsd-btn a, .fsd-btn form {
-    color: #666;
-    text-decoration: none;
-}
-.fsd-btn a:hover, .fsd-btn form:hover {
-    color: rgba(188, 66, 222, 1);
-    text-decoration: none;
-}*/
+
 /*=============== MINI PLAYER ============== */
 .frame-stream-mini-player {
     position: fixed;
