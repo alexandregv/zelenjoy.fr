@@ -56,6 +56,22 @@ body {
     height: calc(100vh - 26px);
     z-index: -1;
 }
+@media screen and (max-width: 1720px) {
+    .website {
+        width: 80%;
+    }
+    .chat {
+        width: 20%;
+    }
+    .chat iframe {
+        position: fixed;
+        top: 26px;
+        bottom: 0;
+        width: 20%;
+        height: calc(100vh - 26px);
+        z-index: -1;
+    }
+}
 .block {
     width: 100%;
 }
@@ -179,6 +195,15 @@ body {
 .stream .frame-stream {
     height: 648px;
     z-index: 1;
+}
+@media screen and (max-width: 1720px) {
+    .stream .top-stream, .stream .frame-stream, .stream .fsdt-btn {
+        width: 68%;
+        margin: auto;
+    }
+    .stream .frame-stream {
+        height: 492px;
+    }
 }
 .top-stream, .top-stream-viewers-theater{
     position: relative;
