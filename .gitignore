@@ -1,5 +1,5 @@
 /vendor/
-/includes/global_vars_.php
+/includes/global_vars_secret.php
 /panel/
 .floo
 .flooignore
