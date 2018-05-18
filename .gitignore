@@ -1,0 +1,6 @@
+/vendor/
+/includes/global_vars_.php
+/panel/
+.floo
+.flooignore
+.idea
