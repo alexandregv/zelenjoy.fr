@@ -44,9 +44,7 @@
             <div class="fsd-btn">
               <form action="api/twitch/follow.php" class="btn-follow-block">
 
-                <button type="submit" class="text-follow">
-                  Suis moi !
-                </button>
+                <input type="submit" class="text-follow" value="Suis moi!">
 
                 <div class="icon-follow">
                   <i class="fas fa-heart"></i>

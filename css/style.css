@@ -282,6 +282,10 @@ body {
     text-align: center;
     padding: 5px 0;
     width: 100px;
+    background-color: rgba(188, 66, 222, 1);
+    border: none;
+    border-radius: 0.2rem;
+    color: #FFF;
 }
 .btn-donate-block .text-donate, .btn-subs-block .text-subs {
     text-align: center;
