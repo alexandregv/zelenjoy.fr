@@ -42,11 +42,9 @@
         <div class="fsdt-btn">
           <div class="d-flex">
             <div class="fsd-btn">
-              <form action="auth/follow.php" class="btn-follow-block">
+              <form action="api/twitch/follow.php" class="btn-follow-block">
 
-                <div class="text-follow">
-                  Suis moi !
-                </div>
+                <input type="submit" class="text-follow" value="Suis moi!">
 
                 <div class="icon-follow">
                   <i class="fas fa-heart"></i>
@@ -54,7 +52,7 @@
 
               </form>
 
-              <a href="https://www.twitch.tv/products/zelenjoy" class="btn-subs-block">
+              <a href="https://www.twitch.tv/products/zelenjoy" class="btn-subs-block" target="_blank">
                 <div class="text-subs">
                   Abonne-toi !
                 </div>
@@ -63,7 +61,7 @@
                 </div>
               </a>
 
-              <a href="https://streamlabs.com/zelenjoy" class="btn-donate-block">
+              <a href="https://streamlabs.com/zelenjoy" class="btn-donate-block" target="_blank">
                 <div class="text-donate">
                   Soutiens moi !
                 </div>
@@ -92,7 +90,7 @@
       </div>
     </div>
     <div class="chat">
-     <?php //TODO: Vérifier si token expiré, puis créer/afficher compte du gars
+     <?php
        if(isset($_COOKIE["twitch_access_token"])){
            $ch = curl_init('https://api.twitch.tv/helix/users');
            curl_setopt_array($ch, array(
@@ -150,7 +148,7 @@
                  </div>
                </a>
 
-               <a href="" class="disconnect">
+               <a href="api/twitch/logout.php" class="disconnect">
                  <div class="icon-disconnect">
                    <i class="fas fa-sign-out-alt"></i>
                  </div>
@@ -165,7 +163,7 @@
        <?php }else{ ?>
         <div class="btn-login-twitch">
             <div class="block-login">
-                <a href="https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=<?= $twitch_client_id ?>&redirect_uri=http://v2.zelenjoy.fr/api/twitch/login&scope=user_read+user_follows_edit" class="d-flex">
+                <a href="api/twitch/login.php" class="d-flex">
                     <div class="text-login">
                         <div class="text-1">Connexion</div>
                         <div class="subtext-1">avec twitch</div>

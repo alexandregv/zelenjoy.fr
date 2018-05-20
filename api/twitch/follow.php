@@ -1,25 +1,35 @@
 <?php
 session_start();
+$_SESSION['return_url'] = "https://v2.zelenjoy.fr/api/twitch/follow.php";
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require "../../includes/global_vars.php";
+require "session.php";
 
-$url = "https://api.twitch.tv/helix/users/{$_SESSION['username']}/follows/channels/zelenjoy";
-$data = array("notifications" => "true");
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array("Client-ID: {$twitch_client_id}", "Authorization: Bearer {$_COOKIE['twitch_access_token']}"));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://api.twitch.tv/kraken/users/{$_SESSION['user_id']}/follows/channels/{$channel_id}",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_CUSTOMREQUEST => "PUT",
+  CURLOPT_HTTPHEADER => array(
+    "Accept: application/vnd.twitchtv.v5+json",
+    "Authorization: OAuth {$_COOKIE['twitch_access_token']}",
+    "Client-ID: {$twitch_client_id}"
+  ),
+));
 
-$response = curl_exec($ch);
+$response = json_decode(curl_exec($curl));
 
-if (!$response)
-{
-    return false;
-}else{
-?>
-  Vous suivez désormais ZelEnjoy! <br>
-  <a href="https://twitch.tv/zelenjoy">https://twitch.tv/zelenjoy</a>
-<?php
+curl_close($curl);
+
+if (isset($response->error)){
+  echo "Nous sommes désolés, une erreur s'est produite.";
 }
+else{
+  header("Location: /");
+}
+
 ?>
