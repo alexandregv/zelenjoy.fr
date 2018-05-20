@@ -54,7 +54,7 @@
 
               </form>
 
-              <a href="https://www.twitch.tv/products/zelenjoy" class="btn-subs-block">
+              <a href="https://www.twitch.tv/products/zelenjoy" class="btn-subs-block" target="_blank">
                 <div class="text-subs">
                   Abonne-toi !
                 </div>
@@ -63,7 +63,7 @@
                 </div>
               </a>
 
-              <a href="https://streamlabs.com/zelenjoy" class="btn-donate-block">
+              <a href="https://streamlabs.com/zelenjoy" class="btn-donate-block" target="_blank">
                 <div class="text-donate">
                   Soutiens moi !
                 </div>
