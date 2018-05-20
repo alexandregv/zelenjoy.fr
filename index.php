@@ -150,7 +150,7 @@
                  </div>
                </a>
 
-               <a href="" class="disconnect">
+               <a href="api/twitch/logout.php" class="disconnect">
                  <div class="icon-disconnect">
                    <i class="fas fa-sign-out-alt"></i>
                  </div>
