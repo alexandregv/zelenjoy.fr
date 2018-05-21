@@ -21,10 +21,12 @@
           </div>
           <div class="viewers ml-auto mr-3">
             <div class="text-center count">
-              <?php if(isset($viewers)) {echo $viewers;} ?>
+              <?= $viewers ?>
             </div>
             <div class="text-center subtitle">
-              viewers
+              <?php if(isset($streamsOffline)) echo "followers";
+                    else echo "viewers";
+              ?>
             </div>
           </div>
         </div>

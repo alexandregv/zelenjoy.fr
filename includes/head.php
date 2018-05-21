@@ -7,13 +7,13 @@
     $_SESSION['streamon'] = time();
     $statusLive = "<i class='fas fa-circle online-mode'></i>";
     $titleLive = $streams->stream->channel->status;
-    $viewers = $streams->stream->viewers. " <i class=\"fas fa-eye\"></i>";
+    $viewers = $streams->stream->viewers;
     $gameLive = $streams->stream->game;
   }else {
     $streamsOffline = json_decode(file_get_contents("https://api.twitch.tv/kraken/channels/" .$channel. "?client_id=" .$twitch_client_id));
     $titleLive = $streamsOffline->status;
     $statusLive = "<i class='fas fa-circle offline-mode'></i>";
-    $viewers = "0";
+    $viewers = $streamsOffline->followers;
   }
   $channelStream = json_decode(file_get_contents("https://api.twitch.tv/kraken/channels/" .$channel. "?client_id=" .$twitch_client_id));
   $followLive = $channelStream->followers;
