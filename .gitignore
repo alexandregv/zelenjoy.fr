@@ -3,4 +3,9 @@
 /panel/
 .floo
 .flooignore
+.idea/vendor/
+/includes/global_vars_secret.php
+/panel/
+.floo
+.flooignore
 .idea
