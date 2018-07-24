@@ -24,7 +24,7 @@
       <li class="nav-item"><a href="http://discord.zelenjoy.fr/" class="nav-link nav-link-icons" target="_blank" id="discord"><i class="fab fa-discord"></i></a></li>
       <li class="nav-item"><a href="https://twitter.com/EnjoyZel" class="nav-link nav-link-icons" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a></li>
       <li class="nav-item"><a href="https://www.twitch.tv/zelenjoy" class="nav-link nav-link-icons" target="_blank" id="twitch"><i class="fab fa-twitch"></i></a></li>
-      <li class="nav-item"><a class="nav-link nav-link-icons snapchat" target="_blank" id="snapchat"><i class="fab fa-snapchat-ghost"></i></a></li><span id="toggle-snap-name" class="snapchat">Bientôt !</span>
+      <li class="nav-item"><a class="nav-link nav-link-icons snapchat" target="_blank" data-toggle="modal" data-target="#snapModal" id="snapchat"><i class="fab fa-snapchat-ghost"></i></a></li> 
     </ul>
     <ul class="navbar-nav navbar-font-nav ">
       <li class="nav-item nav-item-toggler-night-mode" id="">

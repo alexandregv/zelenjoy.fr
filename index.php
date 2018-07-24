@@ -187,6 +187,16 @@
               width="100%">
       </iframe>
     </div>
+    
+    <div class="modal fade" id="snapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          
+              <h5 style="text-align: center; color: white;">zelenjoy</h5>
+              <img src="/img/snapcode.svg" width="100%">
+              
+        </div>
+      </div>
+
     <script type="text/javascript" src="js/app.js"></script>
 
     <!-- Twitch script-->
