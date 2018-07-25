@@ -1,6 +1,3 @@
-:root {
-    --main-color-zelenjoy: rgba(188, 66, 222, 1);
-}
 @font-face {
     font-family: fontFace;
     src: url(/css/font-face/Vampire-Calligraphy.ttf);
@@ -25,8 +22,15 @@ body {
     position: relative;
     display: flex;
     display: -ms-flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    flex-direction: row;
+    -ms-flex-direction: row;
+}
+.chat-left {
+    position: relative;
+    display: flex;
+    display: -ms-flex;
+    flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
 }
 .allow-select {
     -webkit-touch-callout: text; /* iOS Safari */
@@ -42,11 +46,26 @@ body {
 }
 .website {
     width: 83%;
+    z-index: 100000;
+}
+.night-mode .website {
+    /*background-color: rgba(25, 25, 25, 1);*/
+}
+.show {
+    display: block;
+}
+.hide {
+    display: none;
 }
 .chat {
     position: fixed;
     width: 17%;
     right: 0;
+}
+.chat-left .chat {
+    position: fixed;
+    width: 17%;
+    left: 0;
 }
 .chat iframe {
     position: fixed;
@@ -174,12 +193,182 @@ body {
 }
 .nav-link:hover {
     color: rgba(188, 66, 222, 0.9);
+
 }
 .active {
     color: rgba(188, 66, 222, 0.9);
 }
+.night-mode .active {
+    color: rgba(188, 66, 222, 0.9);
+}
 .active .offline-mode{
     color: #333;
+}
+/* PARAMETRES */
+#slider-btn {
+    padding-left: 2px;
+    padding-top: 1px;
+    height: 35px;
+    font-size: 20px;
+    width: 35px;
+    border-radius: 20%;
+    border: 1px solid #999;
+    color: #333;
+}
+#slider-btn:hover {
+    background-color: rgba(188, 66, 222, 0.9);
+    padding-left: 2px;
+    padding-top: 1px;
+    height: 35px;
+    font-size: 20px;
+    width: 35px;
+    border-radius: 25%;
+    border: 1px solid #EEE;
+    color: #FFF;
+}
+/* Night-mode settings btn*/
+.night-mode #slider-btn {
+    padding-left: 2px;
+    padding-top: 1px;
+    height: 35px;
+    font-size: 20px;
+    width: 35px;
+    border-radius: 25%;
+    border: 1px solid #333;
+    color: #FFF;
+}
+.night-mode #slider-btn:hover {
+    background-color: rgba(188, 66, 222, 0.9);
+    padding-left: 2px;
+    padding-top: 1px;
+    height: 35px;
+    font-size: 20px;
+    width: 35px;
+    border-radius: 20%;
+    border: 1px solid #EEE;
+    color: #FFF;
+}
+#slider-btn i {
+    margin-left: 2px;
+    margin-top: 6px;
+}
+#slider {
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 17%;
+    margin-right: -17%;
+    right: 0;
+    background-color: rgba(229, 229, 229, 1);
+    z-index: 10000;
+}
+.chat-left #slider {
+    margin-left: -17%;
+    left: 0;
+}
+/*.chat-right #slider{
+    margin-right: -17%;
+    right: 0;
+}
+.chat-left #slider {
+    left: 0;
+    margin-left: -17%;
+}*/
+#slider {
+    background-color: rgba(229, 229, 229, 1);
+}
+.night-mode #slider {
+    background-color: rgba(15, 15, 15, 1);
+}
+#slider .title-parameters h4 {
+    font-size: 2rem;
+    color: #FFF;
+}
+#slider .title-parameters {
+    width: 100%;
+    height: 75px;
+    border-bottom: 2px solid rgba(188, 66, 222, 1);
+    padding-top: 17px;
+    padding-left: 2rem;
+    background-color: rgba(188, 66, 222, 1);
+}
+#slider .element-params {
+    display: flex;
+    height: 80px;
+}
+#slider .mode-params {
+    width: 80%;
+    display: block;
+    margin-left: 1rem;
+    margin-top: 0.65rem;
+    margin-bottom: 0.65rem;
+    color: #444;
+}
+.night-mode #slider .mode-params {
+    color: #DDD;
+}
+#slider .mode-params h5 {
+    font-size: 1.4rem;
+    margin-bottom: 0px;
+    color: rgba(188, 66, 222, 1);
+}
+#slider .mode-params span {
+    font-size: 0.8rem;
+}
+#slider .element-params .btn-params i {
+    font-size: 23px;
+    margin-top: 1.3rem;
+    color: #444;
+}
+#slider .element-params .btn-params .fa-toggle-on {
+    color: rgba(188, 66, 222, 1);
+}
+.night-mode #slider .element-params .btn-params .fa-toggle-off {
+     color: rgba(255, 255, 255, 0.6);
+ }
+#slider .footer-params {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.footer-params .credits-params, .footer-dev {
+    text-align: center;
+    color: #444;
+}
+.credits-params a, .footer-dev a {
+    font-size: 0.9rem;
+    color: #444;
+}
+.credits-params a:hover, .footer-dev a:hover {
+    font-size: 0.9rem;
+    color: rgba(188, 66, 222, 1);
+    text-decoration: none;
+}
+.credits-params span i, .footer-dev span i {
+    font-size: 0.3rem;
+    vertical-align: middle;
+}
+.copyright-block {
+    text-align: center;
+}
+.copyright {
+    font-size: 0.9rem;
+    color: #333;
+}
+.night-mode .copyright {
+    color: #DDD;
+    text-decoration: none;
+}
+.hr-footer-params {
+ display: block;
+    height: 1px;
+    border: 0;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+    margin: 0 0 1rem;
+}
+.night-mode .hr-footer-params {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
 }
 /*==== STREAM ==== */
 .stream {
@@ -335,6 +524,13 @@ body {
 .frame-stream-mini-player {
     position: fixed;
     bottom: 10px;
+    right: 17.8%;
+    width: 384px;
+    height: 216px;
+}
+.chat-left .frame-stream-mini-player {
+    position: fixed;
+    bottom: 10px;
     right: 10px;
     width: 384px;
     height: 216px;
@@ -429,7 +625,7 @@ body {
     background-color: rgba(255, 255, 255, 1);
     border-bottom: rgba(188, 66, 222, 1) 2px solid;
 }
-.btn-on-logged-twitch:hover .sub-account {
+.night-mode .btn-on-logged-twitch:hover .sub-account {
     display: block;
     width: 100%;
     background-color: rgba(32, 32, 32, 1);
@@ -474,3 +670,123 @@ body {
 .profile>.text-profile>i, .disconnect>.text-disconnect>i {
      vertical-align: middle;
  }
+/* ============== PLANNING ================ */
+.title-planning, .text-planning {
+    display: block;
+    width: 70%;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+}
+.title-planning h5 {
+    font-size: 1.6rem;
+    color: #666;
+}
+.night-mode .title-planning h5 {
+    color: #DDD;
+}
+.title-planning hr {
+    display: block;
+    height: 4px;
+    border: 0;
+    background-color: rgba(188, 66, 222, 1);
+    width: 35px;
+    margin: -7px 0 1rem;
+}
+.planning-block {
+    display: flex;
+    width: 70%;
+    height: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+}
+.blockday {
+    width: 13.5%;
+    text-align: center;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0));
+}
+.night-mode .blockday {
+    width: 13.5%;
+    text-align: center;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+}
+.blockday {
+    margin: 0 5px;
+    border-top: 2px solid rgba(188, 66, 222, 1);
+    padding: 10px 0 0 0;
+}
+.blockday:nth-child(1) {
+    margin-left: 0;
+}
+.blockday h6 {
+    font-size: 22px;
+    color: #666;
+}
+.night-mode .blockday h6 {
+    color: rgba(255, 255, 255, 0.9);
+}
+.thisday, .night-mode .thisday {
+    background-image: linear-gradient(to bottom, rgba(188, 66, 222, 0.2), rgba(188, 66, 222, 0.05), rgba(188, 66, 222, 0));
+}
+.night-mode .thisday .hours, .night-mode .hours {
+    color: #AAA;
+}
+.text-planning {
+    text-align: center;
+    font-size: 0.9rem;
+}
+.night-mode .text-planning {
+    color: #BBB;
+}
+.text-planning {
+    color: #666;
+}
+/* =================== CREDITS  ============ */
+#credits {
+    display: none;
+}
+.credits-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+}
+.credits-block {
+    position: fixed;
+    width: 450px;
+    height: 220px;
+    top: 50px;
+    left: 80px;
+    padding: 10px 15px;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #333;
+    z-index: 10001;
+}
+.close-credits {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.credits-line {
+    position: relative;
+    display: flex;
+    width: 80%;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #F00;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+img {
+    width: 64px;
+    height: 64px;
+}
