@@ -22,7 +22,7 @@
   $gameLive = $channelStream->game;
 
   $URLs = array(
-    'Accueil' => '/',
+    'Stream' => '/',
     'Informations' => '/informations',
     'Rediffusions' => "https://www.twitch.tv/{$channel}/videos/all",
     'Planning' => '/planning',

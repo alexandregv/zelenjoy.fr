@@ -14,10 +14,10 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav navbar-font-nav">
-      <li class="nav-item"><a href="/" class="nav-link <?php if($navPage === "Stream") { echo "active"; } ?>">Stream <?php if (isset($statusLive)) { echo $statusLive;}?></a></li>
-      <li class="nav-item"><a href="<?php echo $URLs['Planning']; ?>" class="nav-link <?php if($navPage === "Planning") { echo "active"; } ?>">Planning</a></li>
-      <li class="nav-item"><a href="<?php echo $URLs['Informations']; ?>" class="nav-link <?php if($navPage === "Informations") { echo "active"; } ?>">Informations</a></li>
-      <li class="nav-item"><a href="<?php echo $URLs['Leaderboard']; ?>" class="nav-link <?php if($navPage === "Leaderboard") { echo "active"; } ?>">Leaderboard</a></li>
+      <li class="nav-item <?php if($navPage === "Stream") { echo "active"; } ?>"><a href="/" class="nav-link <?php if($navPage === "Stream") { echo "active"; } ?>" >Stream <?php if (isset($statusLive)) { echo $statusLive;}?></a></li>
+      <li class="nav-item"><a href="<?php echo $URLs['Planning']; ?>" class="nav-link <?php if($navPage === "Planning") { echo "active"; } ?>" data-turbolinks-action="replace">Planning</a></li>
+      <li class="nav-item"><a href="<?php echo $URLs['Informations']; ?>" class="nav-link <?php if($navPage === "Informations") { echo "active"; } ?>" data-turbolinks-action="replace">Informations</a></li>
+      <li class="nav-item"><a href="<?php echo $URLs['Leaderboard']; ?>" class="nav-link <?php if($navPage === "Leaderboard") { echo "active"; } ?>" data-turbolinks-action="replace">Leaderboard</a></li>
       <li class="nav-item"><a href="<?php echo $URLs['Rediffusions'] ?>" class="nav-link">Rediffusions</a></li>
     </ul>
     <ul class="navbar-nav navbar-font-nav ml-auto mr-3">
@@ -27,8 +27,8 @@
       <li class="nav-item"><a class="nav-link nav-link-icons snapchat" target="_blank" id="snapchat"><i class="fab fa-snapchat-ghost"></i></a></li><span id="toggle-snap-name" class="snapchat">Bientôt !</span>
     </ul>
     <ul class="navbar-nav navbar-font-nav ">
-      <li class="nav-item nav-item-toggler-night-mode" id="">
-        <span class="nav-link" id="night-btn">Mode nuit <i id="night-btn-toggle" class="fas "></i></span>
+      <li class="" id="slider-btn" data-turbolinks-action="replace">
+        <i class="fas fa-cogs" id=""></i>
       </li>
     </ul>
   </div>
