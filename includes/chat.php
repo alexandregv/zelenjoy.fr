@@ -133,7 +133,7 @@
   <section class="footer-params">
     <hr class="hr-footer-params">
     <div class="credits-params">
-      <a class="credits">Crédits</a>
+      <a href="" class="credits" data-toggle="modal" data-target="#credits">Crédits</a>
       <span><i class="fas fa-circle"></i></span>
       <a href="" class="cgu">Mentions légales</a>
       <span><i class="fas fa-circle"></i></span>
@@ -148,4 +148,53 @@
       <a href="" class="copyright">zelenjoy.fr 2018</a>
     </div>
   </section>
+</div>
+
+
+
+
+<!-- Modal credits-->
+<div class="modal fade" id="credits" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crédits</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="dev-list">
+        	<div class="dev">
+        		<div class="dev-logo">
+        			<img src="/img/logomrtwizard.png">
+        		</div>
+        		<div class="dev-pseudo">
+        			<a href="https://mrtwizard.fr/" target="_blank">mrtwizard</a>
+        			<span>Développeur frontend</span>
+        		</div>
+        		<div class="dev-links">
+        			<a href="https://twitter.com/mrtwizard" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a>
+        			<a href="https://github.com/mrtwizard" target="_blank" id="github"><i class="fab fa-github"></i></a>
+        		</div>
+        	</div>
+
+        	<div class="dev">
+        		<div class="dev-logo">
+        			<img src="/img/logotriinoxys.png">
+        		</div>
+        		<div class="dev-pseudo">
+        			<a href="https://triinoxys.fr/" target="_blank">triinoxys</a>
+        			<span>Développeur backend</span>
+        		</div>
+        		<div class="dev-links">
+        			<a href="https://twitter.com/triinoxys" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a>
+        			<a href="https://github.com/triinoxys" target="_blank" id="github"><i class="fab fa-github"></i></a>
+        		</div>
+        	</div>
+        	
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -92,7 +92,6 @@
       </div>
     </div>
     <?php include "./includes/chat.php"; ?>
-
     <!-- Twitch script-->
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
     <script src="js/app.js"></script>
@@ -108,5 +107,6 @@
       <?php
     }
     ?>
+    
   </body>
 </html>
