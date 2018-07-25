@@ -105,6 +105,5 @@ $date = date('l');
       </iframe>
     </div>
     <script src="js/app.js"></script>
-    <?php include "./includes/credits.php"; ?>
   </body>
 </html>
