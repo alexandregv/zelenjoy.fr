@@ -88,7 +88,7 @@
   <iframe frameborder="0"
           scrolling="no"
           id="chat_embed"
-          src="https://www.twitch.tv/embed/lestream/chat"
+          src="https://www.twitch.tv/embed/zelenjoy/chat"
           height="100%"
           width="100%">
   </iframe>

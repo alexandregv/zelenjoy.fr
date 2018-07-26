@@ -48,9 +48,6 @@ body {
     width: 83%;
     z-index: 1000;
 }
-.night-mode .website {
-    /*background-color: rgba(25, 25, 25, 1);*/
-}
 .show {
     display: block;
 }
@@ -266,14 +263,6 @@ body {
     margin-left: -17%;
     left: 0;
 }
-/*.chat-right #slider{
-    margin-right: -17%;
-    right: 0;
-}
-.chat-left #slider {
-    left: 0;
-    margin-left: -17%;
-}*/
 #slider {
     background-color: rgba(229, 229, 229, 1);
 }
@@ -796,4 +785,54 @@ body {
 }
 #github:hover {
   color: #555;
+}
+/* ========== THEATER MODE ========== */
+.theater-mode {
+  overflow-y: hidden;
+}
+.theater-mode-active, .theater-mode .website nav, .theater-mode .fsdt-btn {
+  display: none;
+}
+.theater-mode .theater-mode-active {
+  display: flex;
+}
+.theater-mode .stream {
+  margin-top: 0;
+}
+.theater-mode .top-stream, .theater-mode .frame-stream {
+  width: 100%;
+}
+.theater-mode .top-stream{
+  height: 75px;
+  padding: 0 0 0 15px;
+  background: #EEE;
+}
+.night-mode.theater-mode .top-stream{
+  background: #333;
+}
+.theater-mode .frame-stream {
+  height: 92%;
+}
+.theater-mode-active {
+  width: 300px;
+  height: 100%;
+  background: rgba(169, 59, 199, 1);
+}
+.theater-mode .top-stream-title, .theater-mode .viewers {
+  padding-top: 15px;
+}
+.theater-mode-font-title {
+  display: none;
+}
+.theater-mode .theater-mode-font-title {
+  display: block;
+  color: rgba(188, 66, 222, 1);
+  font-size: 2.5rem;
+  font-family: fontFace, sans-serif;
+  transform: rotate(-8deg);
+  padding-top: 7px;
+  margin-right: 15px;
+}
+.theater-mode .text-theater-active, .icon-theater-active {
+  font-size: 1.6rem;
 }

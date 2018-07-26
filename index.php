@@ -15,6 +15,9 @@
       <div class="stream">
 
         <div class="top-stream">
+          <div>
+            <span class="theater-mode-font-title">ZelEnjoy</span>
+          </div>
           <div class="top-stream-title">
             <div class="title"><?php echo ((strlen($titleLive) >= 65) ? (substr($titleLive, 0, 65) . '...') : $titleLive); ?></div>
             <div><span class="pseudo"><?php if (isset($pseudo)) {echo $pseudo;}?></span> <span class="game">joue à <?php if(isset($gameLive)) { echo $gameLive;}?></span></div>
@@ -29,6 +32,14 @@
               ?>
             </div>
           </div>
+          <div class="theater-mode-active toggle-class-theater-btn">
+              <div class="text-theater-active">
+                  Mode théâtre
+                </div>
+                <div class="icon-theater-active">
+                  <i id="style-theater" class="fas fa-expand "></i>
+                </div>
+            </div>
         </div>
 
         <div class="frame-stream">
@@ -76,7 +87,7 @@
 
             <div class="theater-btn">
 
-              <div class="btn-block" id="toggle-class-theater-btn">
+              <div class="btn-block toggle-class-theater-btn">
                 <div class="text-theater">
                   Mode théâtre
                 </div>

@@ -162,7 +162,7 @@ $(document).ready(function(){
   var theater = sessionStorage.getItem("theater_mode");
   if (!theater) sessionStorage.setItem("theater_mode", "false");
 
-  $("#toggle-class-theater-btn").click( function(){
+  $(".toggle-class-theater-btn").click( function(){
     if (theater == "true") {
       theater = "false";
       $(".toggler").removeClass("theater-mode");
