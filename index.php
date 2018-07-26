@@ -192,7 +192,7 @@
         <div class="modal-dialog modal-sm" role="document">
           
               <h5 style="text-align: center; color: white;">zelenjoy</h5>
-              <img src="/img/snapcode.svg" width="100%">
+              <img src="/img/snapcodeBitmoji.svg" width="100%">
               
         </div>
       </div>
