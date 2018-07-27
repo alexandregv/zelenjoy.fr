@@ -37,7 +37,9 @@
                   Mode théâtre
                 </div>
                 <div class="icon-theater-active">
-                  <i id="style-theater" class="fas fa-expand "></i>
+                  <!--<i id="style-theater" class="fas fa-expand "></i>-->
+                  <div class="b1-active"></div>
+                  <div class="b2-active"></div>
                 </div>
             </div>
         </div>
@@ -92,7 +94,9 @@
                   Mode théâtre
                 </div>
                 <div class="icon-theater">
-                  <i id="style-theater" class="fas fa-expand "></i>
+                  <!--<i id="style-theater" class="fas fa-expand "></i>-->
+                  <div class="b1"></div>
+                  <div class="b2"></div>
                 </div>
               </div>
 

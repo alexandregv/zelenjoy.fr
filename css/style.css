@@ -476,9 +476,26 @@ body {
     width: 130px;
 }
 .btn-block .icon-theater {
+    display: flex;
     width: 35px;
     height: 35px;
     background-color: rgba(0, 0, 0, 0.1);
+}
+.icon-theater .b1 {
+  display: block;
+  width: 15px;
+  height: 20px;
+  background-color: #FFF;
+  margin: 8px 1px 0 5px;
+  border-radius: 2px;
+}
+.icon-theater .b2 {
+  display: block;
+  width: 8px;
+  height: 20px;
+  background-color: #FFF;
+  margin: 8px 1px 0 2px;
+  border-radius: 2px;
 }
 .btn-follow-block .icon-follow, .btn-subs-block .icon-subs, .btn-donate-block .icon-donate {
     width: 35px;
@@ -814,9 +831,11 @@ body {
   height: 92%;
 }
 .theater-mode-active {
-  width: 300px;
+  width: 270px;
   height: 100%;
   background: rgba(169, 59, 199, 1);
+  /*margin: auto 1rem auto 0;
+  border-radius: 3px;*/
 }
 .theater-mode .top-stream-title, .theater-mode .viewers {
   padding-top: 15px;
@@ -833,6 +852,29 @@ body {
   padding-top: 7px;
   margin-right: 15px;
 }
-.theater-mode .text-theater-active, .icon-theater-active {
+.theater-mode .text-theater-active {
+  height: 34px;
   font-size: 1.6rem;
+  margin: auto 0 auto 20px;
+  color: #FFF;
+}
+.theater-mode .icon-theater-active {
+  display: flex;
+  height: 30px;
+  margin: auto 20px auto auto;
+}
+.b1-active {
+  display: block;
+  width: 25px;
+  height: 100%;
+  background-color: #FFF;
+  border-radius: 2px;
+}
+.b2-active {
+  display: block;
+  width: 12px;
+  height: 100%;
+  background-color: #FFF;
+  margin-left: 2px;
+  border-radius: 2px;
 }
