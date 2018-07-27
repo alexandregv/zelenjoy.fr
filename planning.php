@@ -24,7 +24,7 @@ $date = date('l');
             <h6>Lundi</h6>
           </div>
           <div class="hours">
-            Pas de stream
+            22h15 - 00h00
           </div>
         </div>
         <!-- MARDI -->
@@ -33,7 +33,7 @@ $date = date('l');
             <h6>Mardi</h6>
           </div>
           <div class="hours">
-            XXh - XXh
+            20h30 - 22h00
           </div>
         </div>
         <!-- MERCREDI -->
@@ -42,7 +42,7 @@ $date = date('l');
             <h6>Mercredi</h6>
           </div>
           <div class="hours">
-            XXh - XXh
+            16h15 - 18h00
           </div>
         </div>
         <!-- JEUDI -->
@@ -51,7 +51,9 @@ $date = date('l');
             <h6>Jeudi</h6>
           </div>
           <div class="hours">
-            XXh - XXh
+            16h15 - 18h00
+            <br>
+            22h15 - 00h00
           </div>
         </div>
         <!-- VENDREDI -->
@@ -60,7 +62,7 @@ $date = date('l');
             <h6>Vendredi</h6>
           </div>
           <div class="hours">
-            XXh - XXh
+            22h15 - 01h00
           </div>
         </div>
         <!-- SAMEDI -->
@@ -69,7 +71,7 @@ $date = date('l');
             <h6>Samedi</h6>
           </div>
           <div class="hours">
-            XXh - XXh
+            Pas de stream
           </div>
         </div>
         <!-- DIMANCHE -->
@@ -78,7 +80,7 @@ $date = date('l');
             <h6>Dimanche</h6>
           </div>
           <div class="hours">
-            XXh - XXh
+            Pas de stream
           </div>
         </div>
 
