@@ -88,7 +88,7 @@
   <iframe frameborder="0"
           scrolling="no"
           id="chat_embed"
-          src="https://www.twitch.tv/embed/lestream/chat"
+          src="https://www.twitch.tv/embed/zelenjoy/chat"
           height="100%"
           width="100%">
   </iframe>
@@ -155,7 +155,7 @@
 
 <!-- Modal credits-->
 <div class="modal fade" id="credits" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Crédits</h5>
@@ -201,7 +201,7 @@
 
 
 <div class="modal fade" id="snapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-sm" role="document">
+  <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
 
         <h5 style="text-align: center; color: white;">zelenjoy</h5>
         <img src="/img/snapcodeBitmoji.svg" width="100%">
